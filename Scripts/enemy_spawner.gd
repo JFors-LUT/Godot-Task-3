@@ -20,6 +20,7 @@ func _ready():
 	timer.autostart = true
 	enemy_list.append(meteor_scene)
 	add_child(timer)
+	
 
 func _on_timer_timeout():
 	spawn_enemy()
@@ -29,6 +30,9 @@ func spawn_enemy():
 		return
 	var enemy: PackedScene = enemy_list.pick_random()
 	var clone = enemy.instantiate()
+#	clone.connect("destroyed", Callable(ui_node, "update_score"))
+#	clone.connect("hit_player", Callable(ui_node, "update_HP"))
 	clone.position = Vector2(randf_range(offset_x_min, offset_x_max), offset_y)
 	add_child(clone)
+	
 	

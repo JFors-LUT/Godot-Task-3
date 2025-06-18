@@ -25,7 +25,8 @@ func process_ray_cast(target_position: Vector2):
 	var from = global_position
 	var query = PhysicsRayQueryParameters2D.create(from, target_position)
 	query.collide_with_areas = true
-	query.collide_with_bodies = false
+	query.collision_mask = 1 << 1
+	#query.collide_with_bodies = false
 	var result = space_state.intersect_ray(query)
 	
 	if result:

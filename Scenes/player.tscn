@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://csk67dyh8g8vp" path="res://Scenes/laser.tscn" id="4_8k632"]
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_30ocy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+light_mask = 3
 polygon = PackedVector2Array(-12, -11, -8, -37, 8, -37, 12, -11, 36, 2, 41, 0, 45, -7, 49, -6, 47, 24, 43, 24, 41, 19, 36, 23, 13, 27, 7, 37, -7, 37, -14, 27, -36, 23, -42, 20, -43, 24, -46, 24, -50, -5, -46, -7, -41, -1, -36, 2)
 
 [node name="Weapon" type="Node2D" parent="."]

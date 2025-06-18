@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://duqdroecxmlbp" path="res://Assets/gfx/Meteors/meteorBrown_big3.png" id="2_wm1ig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wm1ig"]
-radius = 40.0
+radius = 48.0104
 
 [node name="Meteor" type="Area2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_5civa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,3 +17,5 @@ texture = ExtResource("2_wm1ig")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_wm1ig")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
