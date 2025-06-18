@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctvfo7hopj7oe"]
+[gd_scene load_steps=5 format=3 uid="uid://ctvfo7hopj7oe"]
 
 [ext_resource type="PackedScene" uid="uid://xq7cphh2gg6v" path="res://Scenes/player.tscn" id="2_kq7qh"]
 [ext_resource type="Script" uid="uid://cc7tgxg7wh520" path="res://Scripts/enemy_spawner.gd" id="3_vvr7m"]
 [ext_resource type="Script" uid="uid://dwxaxbw25xqmp" path="res://Scripts/player.gd" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://bhk52n2n5wb4f" path="res://Scenes/meteor.tscn" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://j0fr8h6w4n5k" path="res://Assets/gfx/Backgrounds/darkPurple.png" id="5_p33co"]
 
 [node name="Node" type="Node"]
@@ -78,6 +77,3 @@ position = Vector2(549, 579)
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("4_jjvhh")
-
-[node name="Meteor" parent="." instance=ExtResource("5_kry3j")]
-position = Vector2(-75, 0)

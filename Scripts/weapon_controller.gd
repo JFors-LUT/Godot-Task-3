@@ -11,15 +11,31 @@ func _process(_delta):
 	if Input.is_action_just_pressed("click"):
 		# Get cursor position and pass it to raycast and gfx methods
 		var click_point = get_global_mouse_position()
-		process_ray_cast(click_point)
-		ray_cast_gfx(click_point)
+		var was_hit = process_ray_cast(click_point)
+		if was_hit == Vector2.ZERO:
+			ray_cast_gfx(click_point)
+		else:
+			ray_cast_gfx(was_hit)
 
 
 # -- TASK 3 Raycast functionality HERE -- #
 func process_ray_cast(target_position: Vector2):
-	pass
-
-# --------------------------------------- #
+	var space_state = get_world_2d().direct_space_state
+	#var direction = (target_position - global_position).normalized()
+	var from = global_position
+	var query = PhysicsRayQueryParameters2D.create(from, target_position)
+	query.collide_with_areas = true
+	query.collide_with_bodies = false
+	var result = space_state.intersect_ray(query)
+	
+	if result:
+		var collider = result.collider
+		if collider is Meteor:
+			collider.take_hit()
+			return collider.position
+	else:
+		return Vector2.ZERO
+		# --------------------------------------- #
 
 func ray_cast_gfx(click_point: Vector2):
 	var clone: Line2D = projectile.instantiate()
