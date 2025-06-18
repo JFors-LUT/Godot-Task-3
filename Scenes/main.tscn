@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctvfo7hopj7oe"]
+
+[ext_resource type="PackedScene" uid="uid://xq7cphh2gg6v" path="res://Scenes/player.tscn" id="2_kq7qh"]
+[ext_resource type="Script" uid="uid://cc7tgxg7wh520" path="res://Scripts/enemy_spawner.gd" id="3_vvr7m"]
+[ext_resource type="Texture2D" uid="uid://j0fr8h6w4n5k" path="res://Assets/gfx/Backgrounds/darkPurple.png" id="5_p33co"]
+
+[node name="Node" type="Node"]
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG"]
+position = Vector2(48, 79)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BG"]
+position = Vector2(304, 79)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D3" type="Sprite2D" parent="BG"]
+position = Vector2(560, 79)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D4" type="Sprite2D" parent="BG"]
+position = Vector2(816, 79)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D5" type="Sprite2D" parent="BG"]
+position = Vector2(1072, 79)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D6" type="Sprite2D" parent="BG"]
+position = Vector2(48, 335)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D7" type="Sprite2D" parent="BG"]
+position = Vector2(304, 335)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D8" type="Sprite2D" parent="BG"]
+position = Vector2(560, 335)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D9" type="Sprite2D" parent="BG"]
+position = Vector2(816, 335)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D10" type="Sprite2D" parent="BG"]
+position = Vector2(1072, 335)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D11" type="Sprite2D" parent="BG"]
+position = Vector2(48, 591)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D12" type="Sprite2D" parent="BG"]
+position = Vector2(304, 591)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D13" type="Sprite2D" parent="BG"]
+position = Vector2(560, 591)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D14" type="Sprite2D" parent="BG"]
+position = Vector2(816, 591)
+texture = ExtResource("5_p33co")
+
+[node name="Sprite2D15" type="Sprite2D" parent="BG"]
+position = Vector2(1072, 591)
+texture = ExtResource("5_p33co")
+
+[node name="MeteorSpawner" type="Node" parent="."]
+script = ExtResource("3_vvr7m")
+
+[node name="Player" parent="." instance=ExtResource("2_kq7qh")]
+position = Vector2(549, 579)
+collision_mask = 0
